@@ -6,7 +6,7 @@ Feature: Evaluacion Chapter Desarrollo - Marvel Characters
     * def user = 'disandov'
     * def urlBase = baseEndpoint + '/' + user + '/api'
     * header Content-Type = 'application/json'
-    * def newId = 38
+    * def newId = 42
 
   @createCharacter
   Scenario: Crear personaje exitosamente
@@ -76,7 +76,7 @@ Feature: Evaluacion Chapter Desarrollo - Marvel Characters
     """
     [
         {
-            "id": 38,
+            "id": 42,
             "name": "IronMan",
             "alterego": "Tony Stark",
             "description": "Genius billionaire",
@@ -98,7 +98,7 @@ Feature: Evaluacion Chapter Desarrollo - Marvel Characters
     Given url urlBase + '/characters/' + newId
     When method GET
     Then status 200
-    And match response =={ "id": 38,"name": "IronMan", "alterego": "Tony Stark","description": "Genius billionaire","powers": [ "Armor", "Flight" ] }
+    And match response =={ "id": 42,"name": "IronMan", "alterego": "Tony Stark","description": "Genius billionaire","powers": [ "Armor", "Flight" ] }
     * def characterName = response.name
     * print 'Nombre del personaje:', characterName
 
